@@ -6,15 +6,16 @@ interface SlideProps {
   children: ReactNode
   align?: 'center' | 'left'
   kicker?: ReactNode
+  wide?: boolean
 }
 
 // Общая обёртка слайда: единые отступы, фон и «ступенчатая» анимация детей.
-export default function Slide({ children, align = 'center', kicker }: SlideProps) {
+export default function Slide({ children, align = 'center', kicker, wide = false }: SlideProps) {
   return (
     <section className={`slide slide--${align}`}>
       {kicker && <div className="slide__kicker">{kicker}</div>}
       <motion.div
-        className="slide__body"
+        className={'slide__body' + (wide ? ' slide__body--wide' : '')}
         initial="hidden"
         animate="show"
         variants={{

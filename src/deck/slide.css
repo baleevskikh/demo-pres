@@ -41,6 +41,10 @@
   align-items: inherit;
 }
 
+.slide__body--wide {
+  max-width: 1440px;
+}
+
 .slide h1 {
   font-size: clamp(44px, 7vw, 84px);
   line-height: 1.05;

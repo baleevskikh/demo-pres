@@ -6,6 +6,13 @@
   --muted: #9a9a9a;
   --accent: #ffdd2d; /* фирменный жёлтый Т-Банк */
   --accent-2: #ffe97a; /* светлый жёлтый для мягких акцентов */
+  --panel: #161616; /* поверхность карточек */
+  --panel-2: #1e1e1e; /* поверхность повыше */
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --purple: #a785ff; /* подсветка изменений агента */
+  --purple-soft: rgba(167, 133, 255, 0.16);
+  --green: #4ee39a; /* успешные состояния */
   --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --mono: 'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, monospace;
 }
