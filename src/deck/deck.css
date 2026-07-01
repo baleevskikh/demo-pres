@@ -28,14 +28,14 @@
   height: 9px;
   border-radius: 50%;
   border: none;
-  background: #2a3350;
+  background: #3a3a3a;
   cursor: pointer;
   padding: 0;
   transition: background 0.2s, transform 0.2s;
 }
 
 .deck__dot:hover {
-  background: #3d496e;
+  background: #555555;
 }
 
 .deck__dot.is-active {

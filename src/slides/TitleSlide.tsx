@@ -5,11 +5,11 @@ export default function TitleSlide() {
     <Slide align="center">
       <Reveal>
         <h1>
-          Презентация на <span className="gradient-text">чистом React + TS</span>
+          Презентация в айдентике <span className="gradient-text">Т-Банк</span>
         </h1>
       </Reveal>
       <Reveal>
-        <p>Каркас собран с Claude Code · Vite · Framer Motion</p>
+        <p>React + TypeScript · Vite · Framer Motion</p>
       </Reveal>
       <Reveal>
         <p style={{ fontSize: 14, opacity: 0.7 }}>

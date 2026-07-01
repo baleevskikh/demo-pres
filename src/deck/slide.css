@@ -6,8 +6,8 @@
   justify-content: center;
   padding: clamp(48px, 8vw, 120px);
   background:
-    radial-gradient(120% 120% at 100% 0%, rgba(110, 168, 254, 0.1), transparent 55%),
-    radial-gradient(120% 120% at 0% 100%, rgba(185, 146, 255, 0.1), transparent 55%),
+    radial-gradient(120% 120% at 100% 0%, rgba(255, 221, 45, 0.12), transparent 55%),
+    radial-gradient(120% 120% at 0% 100%, rgba(255, 221, 45, 0.06), transparent 55%),
     var(--bg-soft);
 }
 
@@ -95,11 +95,11 @@
   font-family: var(--mono);
   font-size: clamp(14px, 1.5vw, 18px);
   line-height: 1.7;
-  background: #0a0e18;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #121212;
+  border: 1px solid rgba(255, 221, 45, 0.2);
   border-radius: 14px;
   padding: 24px 28px;
-  color: #c7d2e6;
+  color: #e0e0e0;
   overflow-x: auto;
   white-space: pre;
   max-width: 100%;
