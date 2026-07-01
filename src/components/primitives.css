@@ -2,23 +2,23 @@
    Визуальные примитивы для слайдов Nessy Pages
    ============================================================ */
 
-/* --- Раскладка в две колонки: текст + визуал ---------------- */
+/* --- Раскладка в две колонки: текст + скриншот ------------- */
 .split {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: clamp(32px, 5vw, 72px);
   align-items: center;
   width: 100%;
 }
 
 .split--visual-left {
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
 }
 
 .split__text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
   text-align: left;
   align-items: flex-start;
 }
@@ -28,25 +28,19 @@
   justify-content: center;
   align-items: center;
   min-width: 0;
+  width: 100%;
 }
 
-/* --- Лид-абзац и подписи ----------------------------------- */
+/* --- Лид-абзац и надзаголовки ------------------------------ */
 .lead {
-  font-size: clamp(18px, 2vw, 24px) !important;
+  font-size: clamp(18px, 2.1vw, 25px) !important;
   color: var(--fg) !important;
-  opacity: 0.9;
-  max-width: 40ch;
+  opacity: 0.92;
+  max-width: 42ch;
+  line-height: 1.5 !important;
 }
 
-.eyebrow {
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* --- Пилюли/бейджи ----------------------------------------- */
+/* --- Пилюли ------------------------------------------------ */
 .pill {
   display: inline-flex;
   align-items: center;
@@ -60,367 +54,95 @@
   color: var(--fg);
   white-space: nowrap;
 }
-
 .pill--accent {
   border-color: rgba(255, 221, 45, 0.4);
   background: rgba(255, 221, 45, 0.1);
   color: var(--accent);
 }
-
 .pill--purple {
   border-color: rgba(167, 133, 255, 0.45);
   background: var(--purple-soft);
   color: var(--purple);
 }
-
 .pill-row {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-/* --- Окно редактора контента (браузерный фрейм) ------------ */
-.frame {
+/* --- Место под скриншот / скринкаст ------------------------ */
+.shot {
   width: 100%;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  background: var(--panel);
-  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.9);
-  overflow: hidden;
-}
-
-.frame__bar {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 18px;
-  background: var(--panel-2);
-  border-bottom: 1px solid var(--border);
-}
-
-.frame__dots {
-  display: flex;
-  gap: 7px;
-}
-.frame__dots span {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #3a3a3a;
-}
-
-.frame__tab {
-  font-size: 14px;
-  color: var(--muted);
-  font-weight: 500;
-}
-
-.frame__spacer {
-  flex: 1;
-}
-
-.agent-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: 10px;
-  background: var(--accent);
-  color: #101010;
-  font-weight: 700;
-  font-size: 14px;
-  border: none;
-}
-.agent-btn--ghost {
-  background: rgba(255, 221, 45, 0.12);
-  color: var(--accent);
-  border: 1px solid rgba(255, 221, 45, 0.4);
-}
-.agent-btn.is-pulsing {
-  box-shadow: 0 0 0 0 rgba(255, 221, 45, 0.6);
-  animation: agent-pulse 2.2s infinite;
-}
-@keyframes agent-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 221, 45, 0.55);
-  }
-  70% {
-    box-shadow: 0 0 0 16px rgba(255, 221, 45, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 221, 45, 0);
-  }
-}
-
-.frame__body {
-  display: flex;
-  min-height: 300px;
-}
-
-.frame__canvas {
-  flex: 1;
-  padding: 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.skeleton {
-  border-radius: 8px;
-  background: linear-gradient(90deg, #202020, #262626);
-}
-.skeleton--title {
-  height: 26px;
-  width: 55%;
-}
-.skeleton--line {
-  height: 14px;
-}
-.skeleton--w80 { width: 80%; }
-.skeleton--w60 { width: 60%; }
-.skeleton--w70 { width: 70%; }
-.skeleton--block {
-  height: 88px;
-  border: 1px dashed var(--border-strong);
-  background: #191919;
-}
-
-/* --- Панель чата с агентом --------------------------------- */
-.chat {
-  width: 340px;
-  flex-shrink: 0;
-  border-left: 1px solid var(--border);
-  background: #131313;
-  display: flex;
-  flex-direction: column;
-}
-
-.chat--standalone {
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  width: 100%;
-  max-width: 560px;
-  overflow: hidden;
-  box-shadow: 0 40px 90px -40px rgba(0, 0, 0, 0.9);
-}
-
-.chat__head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 18px;
-  border-bottom: 1px solid var(--border);
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.chat__avatar {
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  background: var(--accent);
-  color: #101010;
-  font-size: 15px;
-}
-
-.chat__stream {
-  flex: 1;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-content: flex-end;
-}
-
-.bubble {
-  max-width: 85%;
-  padding: 11px 14px;
-  border-radius: 14px;
-  font-size: 14.5px;
-  line-height: 1.5;
-}
-.bubble--user {
-  align-self: flex-end;
-  background: var(--accent);
-  color: #111;
-  border-bottom-right-radius: 5px;
-  font-weight: 500;
-}
-.bubble--agent {
-  align-self: flex-start;
-  background: var(--panel-2);
-  color: var(--fg);
-  border: 1px solid var(--border);
-  border-bottom-left-radius: 5px;
-}
-.bubble--agent b {
-  color: var(--accent);
-}
-
-.chat__composer {
-  border-top: 1px solid var(--border);
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.chat__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-.chip {
-  padding: 6px 11px;
-  border-radius: 999px;
-  border: 1px solid var(--border-strong);
-  background: var(--panel);
-  font-size: 12.5px;
-  color: var(--fg);
-  white-space: nowrap;
-}
-.chip--accent {
-  border-color: rgba(255, 221, 45, 0.4);
-  color: var(--accent);
-}
-.chat__input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 12px;
-  border-radius: 10px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 13.5px;
-}
-.chat__send {
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-  background: var(--accent);
-  color: #111;
-  display: grid;
-  place-items: center;
-  font-size: 13px;
-}
-
-/* --- Дерево блоков ----------------------------------------- */
-.tree {
-  width: 100%;
-  max-width: 560px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--panel);
-  overflow: hidden;
-}
-.tree__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--border);
-  font-size: 14px;
-  color: var(--muted);
-  font-weight: 600;
-}
-.tree__toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  background: var(--purple-soft);
-  color: var(--purple);
-  border: 1px solid rgba(167, 133, 255, 0.45);
-  font-size: 12.5px;
-  font-weight: 600;
-}
-.tree__rows {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.tree__row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 11px 12px;
-  border-radius: 10px;
-  font-size: 15px;
-  background: transparent;
-  border: 1px solid transparent;
-}
-.tree__row .ico {
-  opacity: 0.75;
-  width: 18px;
-  text-align: center;
-}
-.tree__row.is-changed {
-  background: var(--purple-soft);
-  border-color: rgba(167, 133, 255, 0.4);
-  color: #fff;
-}
-.tree__row.is-changed::after {
-  content: 'изменён агентом';
-  margin-left: auto;
-  font-size: 11px;
-  color: var(--purple);
-  font-weight: 600;
-}
-.tree__row[data-depth='1'] { margin-left: 22px; }
-.tree__row[data-depth='2'] { margin-left: 44px; }
-
-/* --- Слот под демо / скринкаст ----------------------------- */
-.demo-slot {
-  width: 100%;
-  max-width: 1080px;
-  aspect-ratio: 16 / 8.2;
-  border-radius: 22px;
-  border: 2px dashed rgba(255, 221, 45, 0.35);
+  aspect-ratio: 16 / 9.2;
+  border-radius: 20px;
+  border: 1.5px dashed rgba(255, 221, 45, 0.4);
   background:
-    radial-gradient(80% 120% at 50% 0%, rgba(255, 221, 45, 0.08), transparent 60%),
+    radial-gradient(100% 130% at 50% 0%, rgba(255, 221, 45, 0.06), transparent 62%),
     var(--panel);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 16px;
   text-align: center;
+  padding: 28px;
 }
-.demo-slot__play {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  background: var(--accent);
-  color: #101010;
+.shot--tall {
+  aspect-ratio: 4 / 3;
+}
+.shot__icon {
+  width: 66px;
+  height: 66px;
+  border-radius: 16px;
   display: grid;
   place-items: center;
-  font-size: 34px;
-  box-shadow: 0 0 0 0 rgba(255, 221, 45, 0.5);
-  animation: agent-pulse 2.4s infinite;
+  font-size: 30px;
+  background: rgba(255, 221, 45, 0.1);
+  border: 1px solid rgba(255, 221, 45, 0.28);
 }
-.demo-slot__label {
-  font-size: clamp(22px, 3vw, 34px);
-  font-weight: 700;
-  color: var(--fg);
-}
-.demo-slot__hint {
-  font-size: 15px;
-  letter-spacing: 0.16em;
+.shot__label {
+  font-size: 13px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 700;
 }
-.demo-slot__caption {
+.shot__caption {
   font-size: 16px;
   color: var(--muted);
-  max-width: 46ch;
+  max-width: 42ch;
+  line-height: 1.5;
 }
 
-/* --- Карточки (типы страниц, шаги, пункты) ----------------- */
+/* --- Нумерованная повестка раздела -------------------------- */
+.agenda {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.agenda__item {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 22px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+.agenda__num {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  min-width: 44px;
+}
+.agenda__label {
+  font-size: clamp(19px, 2vw, 26px);
+  font-weight: 600;
+}
+
+/* --- Карточки ---------------------------------------------- */
 .cards {
   display: grid;
   gap: 20px;
@@ -465,179 +187,23 @@
   border-color: rgba(167, 133, 255, 0.4);
 }
 
-/* --- Поток шагов (миграция) -------------------------------- */
-.flow {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  width: 100%;
-}
-.flow__step {
-  position: relative;
-  padding: 24px;
-  border-radius: 18px;
-  border: 1px solid var(--border);
-  background: var(--panel);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-align: left;
-}
-.flow__num {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  font-size: 17px;
-  background: var(--accent);
-  color: #101010;
-}
-.flow__title {
-  font-size: 19px;
-  font-weight: 700;
-}
-.flow__text {
-  font-size: 15px;
-  color: var(--muted);
-  line-height: 1.5;
-}
-.flow__tag {
-  align-self: flex-start;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-.flow__tag--auto {
-  background: rgba(78, 227, 154, 0.14);
-  color: var(--green);
-}
-.flow__tag--approve {
-  background: rgba(255, 221, 45, 0.14);
-  color: var(--accent);
-}
-.flow__tag--fix {
-  background: var(--purple-soft);
-  color: var(--purple);
-}
-
-/* --- До/После (миграция версий) ---------------------------- */
-.mapping {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 18px;
-  align-items: center;
-  width: 100%;
-  max-width: 640px;
-}
-.mapping__col {
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--panel);
-  overflow: hidden;
-}
-.mapping__cap {
-  padding: 10px 14px;
-  font-size: 13px;
-  font-weight: 600;
-  border-bottom: 1px solid var(--border);
-  color: var(--muted);
-}
-.mapping__col--new .mapping__cap {
-  color: var(--accent);
-}
-.mapping__field {
-  padding: 12px 14px;
-  font-family: var(--mono);
-  font-size: 14px;
-  border-bottom: 1px solid var(--border);
-}
-.mapping__field:last-child {
-  border-bottom: none;
-}
-.mapping__arrow {
-  font-size: 26px;
-  color: var(--accent);
-}
-
-/* --- Нумерованный список пунктов раздела ------------------- */
-.agenda {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  width: 100%;
-}
-.agenda__item {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 26px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  background: var(--panel);
-}
-.agenda__num {
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-  min-width: 44px;
-}
-.agenda__label {
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 600;
-}
-.agenda__desc {
-  margin-left: auto;
-  font-size: 15px;
-  color: var(--muted);
-  text-align: right;
-}
-
-/* --- Большой номер раздела (разделители) ------------------- */
-.section-cover {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
-}
-.section-cover__num {
-  font-size: clamp(90px, 16vw, 200px);
-  font-weight: 900;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  background: linear-gradient(150deg, var(--accent), rgba(255, 221, 45, 0.25));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.section-cover__title {
-  font-size: clamp(30px, 5vw, 60px);
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-
-/* --- Мини-список фич без буллетов --------------------------- */
+/* --- Чек-лист без буллетов --------------------------------- */
 .checklist {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 .checklist__item {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  font-size: clamp(16px, 1.9vw, 21px);
+  font-size: clamp(17px, 2vw, 22px);
   line-height: 1.45;
 }
 .checklist__mark {
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 8px;
   display: grid;
   place-items: center;
@@ -646,16 +212,19 @@
   font-size: 14px;
   margin-top: 2px;
 }
+.checklist__mark--purple {
+  background: var(--purple-soft);
+  color: var(--purple);
+}
 
-/* --- Адаптив для узких экранов ------------------------------ */
+/* --- Адаптив ----------------------------------------------- */
 @media (max-width: 900px) {
   .split,
   .split--visual-left {
     grid-template-columns: 1fr;
   }
   .cards--3,
-  .cards--2,
-  .flow {
+  .cards--2 {
     grid-template-columns: 1fr;
   }
 }

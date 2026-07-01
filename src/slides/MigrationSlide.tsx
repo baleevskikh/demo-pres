@@ -1,30 +1,32 @@
 import Slide, { Reveal } from '../deck/Slide'
-import { Cards } from '../components/primitives'
+import { Shot, Checklist } from '../components/primitives'
 
 export default function MigrationSlide() {
   return (
-    <Slide align="left" kicker="2.2 · Обновление версии блоков" wide>
+    <Slide align="left" kicker="02 · Обновление версии блоков" wide>
       <Reveal>
         <h2>Миграцию блоков теперь делает агент</h2>
       </Reveal>
       <Reveal>
-        <Cards
-          cols={2}
-          items={[
-            {
-              icon: '🧩',
-              title: 'Запрос был давно',
-              text: 'Пользователи хотели удобный способ мигрировать блоки. А мы долго не могли придумать, как построить под это UI.',
-            },
-            {
-              icon: '✨',
-              title: 'Решили в диалоге',
-              text: 'Агент снимает когнитивную нагрузку: не нужно самому думать, как смапить свойства блока — он берёт это на себя.',
-              purple: true,
-            },
-          ]}
-        />
+        <p className="lead">
+          Запрос был давно, но под него было тяжело построить UI. Агент решил это элегантно — миграция
+          идёт в диалоге и снимает когнитивную нагрузку с пользователя.
+        </p>
       </Reveal>
+      <div className="split">
+        <Reveal className="split__text">
+          <Checklist
+            items={[
+              'Простой случай — агент переносит блок сам',
+              'Сложный — предлагает маппинг свойств и просит апрув',
+              'Пользователь может поправить агента прямо в диалоге',
+            ]}
+          />
+        </Reveal>
+        <Reveal className="split__visual">
+          <Shot caption="Диалог миграции: предложенный агентом маппинг свойств и запрос подтверждения." />
+        </Reveal>
+      </div>
     </Slide>
   )
 }

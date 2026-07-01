@@ -1,34 +1,26 @@
 import Slide, { Reveal } from '../deck/Slide'
-import { BlockTree, Checklist } from '../components/primitives'
+import { Shot, Checklist } from '../components/primitives'
 
 export default function HighlightSlide() {
   return (
-    <Slide align="left" kicker="2.3 · Подсветка изменений" wide>
+    <Slide align="left" kicker="02 · Подсветка изменений" wide>
       <Reveal>
         <h2>Видно, что менял агент</h2>
       </Reveal>
-      <div className="split">
+      <div className="split split--visual-left">
+        <Reveal className="split__visual">
+          <Shot caption="Дерево блоков: изменённые агентом блоки подсвечены фиолетовым; в редакторе блока — фильтр по изменённым полям." />
+        </Reveal>
         <Reveal className="split__text">
           <Checklist
+            tone="purple"
             items={[
               <>
-                Кнопка над деревом блоков — и все изменённые блоки подсвечиваются{' '}
+                Кнопка над деревом — и изменённые блоки подсвечены{' '}
                 <b style={{ color: 'var(--purple)' }}>фиолетовым</b>
               </>,
-              'В редакторе блока — фильтр показывает поля, отредактированные агентом',
+              'В редакторе блока фильтр показывает поля, отредактированные агентом',
               'Удобно сфокусироваться именно на этих данных',
-            ]}
-          />
-        </Reveal>
-        <Reveal className="split__visual">
-          <BlockTree
-            rows={[
-              { label: 'Hero', icon: '▤' },
-              { label: 'Преимущества', icon: '▤', changed: true },
-              { label: 'Список фич', icon: '▧', depth: 1, changed: true },
-              { label: 'Тарифы', icon: '▤' },
-              { label: 'CTA-баннер', icon: '▤', changed: true },
-              { label: 'Футер', icon: '▤' },
             ]}
           />
         </Reveal>
