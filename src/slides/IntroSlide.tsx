@@ -1,5 +1,7 @@
 import Slide, { Reveal } from '../deck/Slide'
-import { Shot, Checklist } from '../components/primitives'
+import { Checklist } from '../components/primitives'
+import MediaFigure from '../components/MediaFigure'
+import { media } from '../media'
 
 export default function IntroSlide() {
   return (
@@ -19,7 +21,11 @@ export default function IntroSlide() {
           />
         </Reveal>
         <Reveal className="split__visual">
-          <Shot caption="Редактор контента с кнопкой агента в шапке и открытым сайдбаром справа." />
+          <MediaFigure
+            src={media.editorSidebar}
+            alt="Редактор контента с кнопкой Nessy Pages в шапке и открытым сайдбаром"
+            caption="Кнопка Nessy Pages в шапке и открытый сайдбар справа — там общение и действия."
+          />
         </Reveal>
       </div>
     </Slide>

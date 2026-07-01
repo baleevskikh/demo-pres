@@ -1,5 +1,7 @@
 import Slide, { Reveal } from '../deck/Slide'
-import { Shot, Checklist } from '../components/primitives'
+import { Checklist } from '../components/primitives'
+import MediaFigure from '../components/MediaFigure'
+import { media } from '../media'
 
 export default function StartSlide() {
   return (
@@ -9,14 +11,19 @@ export default function StartSlide() {
       </Reveal>
       <div className="split split--visual-left">
         <Reveal className="split__visual">
-          <Shot caption="Сайдбар с набором подсказок: одна кнопка — и агент проведёт по нужному flow." />
+          <MediaFigure
+            src={media.hints}
+            fit
+            alt="Сайдбар агента с набором подсказок"
+            caption="Пустой сайдбар предлагает подсказки — одна кнопка проведёт по нужному flow."
+          />
         </Reveal>
         <Reveal className="split__text">
           <Checklist
             items={[
               'Откройте редактор на своём отображении',
               'Напишите «Привет! Что ты умеешь?» — агент всё расскажет',
-              'Или тыкните одну из подсказок, если не знаете, с чего начать',
+              'Или тыкните подсказку: «Создать страницу с нуля», «Внести точную правку»',
               'Дальше экспериментируйте: от правки блока до страницы с нуля',
             ]}
           />

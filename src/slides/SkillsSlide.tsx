@@ -1,5 +1,7 @@
 import Slide, { Reveal } from '../deck/Slide'
-import { Shot, PillRow, Checklist } from '../components/primitives'
+import { PillRow, Checklist } from '../components/primitives'
+import MediaFigure from '../components/MediaFigure'
+import { media } from '../media'
 
 export default function SkillsSlide() {
   return (
@@ -26,7 +28,12 @@ export default function SkillsSlide() {
           />
         </Reveal>
         <Reveal className="split__visual">
-          <Shot caption="План-мод: выбор типа страницы, под который агент подгружает нужный скилл." />
+          <MediaFigure
+            src={media.skill}
+            fit
+            alt="Агент загружает скилл product-page и переходит к планированию"
+            caption="«Собери продуктовую страницу» → агент подгружает скилл product-page и переходит в фазу планирования."
+          />
         </Reveal>
       </div>
     </Slide>

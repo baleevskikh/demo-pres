@@ -1,5 +1,6 @@
 import Slide, { Reveal } from '../deck/Slide'
-import { Shot, Checklist } from '../components/primitives'
+import MediaFigure from '../components/MediaFigure'
+import { media } from '../media'
 
 export default function HighlightSlide() {
   return (
@@ -7,24 +8,29 @@ export default function HighlightSlide() {
       <Reveal>
         <h2>Видно, что менял агент</h2>
       </Reveal>
-      <div className="split split--visual-left">
-        <Reveal className="split__visual">
-          <Shot caption="Дерево блоков: изменённые агентом блоки подсвечены фиолетовым; в редакторе блока — фильтр по изменённым полям." />
-        </Reveal>
-        <Reveal className="split__text">
-          <Checklist
-            tone="purple"
-            items={[
-              <>
-                Кнопка над деревом — и изменённые блоки подсвечены{' '}
-                <b style={{ color: 'var(--purple)' }}>фиолетовым</b>
-              </>,
-              'В редакторе блока фильтр показывает поля, отредактированные агентом',
-              'Удобно сфокусироваться именно на этих данных',
-            ]}
+      <Reveal>
+        <p className="lead">
+          Кнопка над деревом подсвечивает изменённые блоки{' '}
+          <b style={{ color: 'var(--purple)' }}>фиолетовым</b>, а фильтр в редакторе блока показывает
+          поля, отредактированные агентом.
+        </p>
+      </Reveal>
+      <Reveal>
+        <div className="figure-row">
+          <MediaFigure
+            src={media.highlightTree}
+            fit
+            alt="Изменённые агентом блоки подсвечены в дереве"
+            caption="Кнопка над деревом → изменённые блоки подсвечены."
           />
-        </Reveal>
-      </div>
+          <MediaFigure
+            src={media.highlightFilter}
+            fit
+            alt="Фильтр «Отредактированные AI-агентом» в редакторе блока"
+            caption="Фильтр «Отредактированные AI-агентом» — только изменённые поля."
+          />
+        </div>
+      </Reveal>
     </Slide>
   )
 }

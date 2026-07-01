@@ -1,5 +1,7 @@
 import Slide, { Reveal } from '../deck/Slide'
-import { Shot, Checklist } from '../components/primitives'
+import { Checklist } from '../components/primitives'
+import MediaFigure from '../components/MediaFigure'
+import { media } from '../media'
 
 export default function MigrationSlide() {
   return (
@@ -7,24 +9,25 @@ export default function MigrationSlide() {
       <Reveal>
         <h2>Миграцию блоков теперь делает агент</h2>
       </Reveal>
-      <Reveal>
-        <p className="lead">
-          Запрос был давно, но под него было тяжело построить UI. Агент решил это элегантно — миграция
-          идёт в диалоге и снимает когнитивную нагрузку с пользователя.
-        </p>
-      </Reveal>
       <div className="split">
         <Reveal className="split__text">
+          <p className="lead">
+            Запрос был давно, но под него было тяжело построить UI. Агент решил это в диалоге и снял
+            когнитивную нагрузку с пользователя.
+          </p>
           <Checklist
             items={[
               'Простой случай — агент переносит блок сам',
-              'Сложный — предлагает маппинг свойств и просит апрув',
+              'Сложный — предлагает маппинг и просит апрув',
               'Пользователь может поправить агента прямо в диалоге',
             ]}
           />
         </Reveal>
         <Reveal className="split__visual">
-          <Shot caption="Диалог миграции: предложенный агентом маппинг свойств и запрос подтверждения." />
+          <MediaFigure
+            video={media.migration}
+            caption="Демонстрация: миграция блока на новую версию в диалоге. Клик — открыть на весь экран."
+          />
         </Reveal>
       </div>
     </Slide>
